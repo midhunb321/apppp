@@ -1,13 +1,11 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, render_template
 import pickle
-import pandas as pd
-from sklearn.ensemble import GradientBoostingRegressor
+
+app = Flask(__name__, static_url_path='/static')
 
 # Load the trained model
 with open('model.pkl', 'rb') as f:
     model = pickle.load(f)
-
-app = Flask(__name__)
 
 @app.route('/')
 def home():

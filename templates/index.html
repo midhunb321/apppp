@@ -4,20 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wage Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('{{ url_for("static", filename="p.jpg") }}');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        h2 {
+            color: #333;
+        }
+        
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h2>Wage Prediction</h2>
-    <form action="/predict" method="post">
-        <label for="age">Age:</label>
-        <input type="text" id="age" name="age"><br><br>
-        
-        <label for="overall_rating">Overall Rating:</label>
-        <input type="text" id="overall_rating" name="overall_rating"><br><br>
-        
-        <label for="positions_encoded">Position Encoded:</label>
-        <input type="text" id="positions_encoded" name="positions_encoded"><br><br>
-        
-        <input type="submit" value="Predict">
-    </form>
+    <div class="container">
+        <h2>Wage Prediction</h2>
+        <form action="/predict" method="post">
+            <label for="age">Age:</label><br>
+            <input type="text" id="age" name="age"><br>
+            
+            <label for="overall_rating">Overall Rating:</label><br>
+            <input type="text" id="overall_rating" name="overall_rating"><br>
+            
+            <label for="positions_encoded">Position Encoded:</label><br>
+            <input type="text" id="positions_encoded" name="positions_encoded"><br>
+            
+            <input type="submit" value="Predict">
+        </form>
+    </div>
 </body>
 </html>
